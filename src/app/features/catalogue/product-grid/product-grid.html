@@ -1,0 +1,10 @@
+<div class="grid">
+  @if (products.length === 0) {
+    <div class="empty">
+      <p>Aucun produit dans cette catégorie pour le moment.</p>
+    </div>
+  }
+  @for (product of products; track product.id) {
+    <app-product-card [product]="product" />
+  }
+</div>

@@ -1,0 +1,169 @@
+@use '../../../../styles/variables' as *;
+
+.testimonials {
+  background: $nuit;
+  padding: $section-padding;
+}
+
+.testi-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.eyebrow {
+  font-family: $font-accent;
+  font-size: 0.65rem;
+  letter-spacing: 0.3em;
+  color: $or;
+  text-transform: uppercase;
+  margin-bottom: 0.8rem;
+}
+
+.section-title {
+  font-family: $font-display;
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
+  font-weight: 300;
+  color: #fff;
+  margin-bottom: 0.8rem;
+
+  em { font-style: italic; color: $or; }
+}
+
+.testi-sub {
+  font-size: 0.88rem;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.testi-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 5rem;
+}
+
+.testi-card {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(196, 146, 42, 0.15);
+  padding: 2rem;
+  position: relative;
+  transition: border-color 0.25s;
+
+  &:hover { border-color: rgba(196, 146, 42, 0.4); }
+}
+
+.quote-icon {
+  width: 28px;
+  height: 28px;
+  color: $or;
+  opacity: 0.3;
+  margin-bottom: 1.2rem;
+
+  svg { width: 100%; height: 100%; }
+}
+
+.testi-text {
+  font-family: $font-display;
+  font-size: 1rem;
+  font-style: italic;
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.7;
+  margin-bottom: 1.2rem;
+}
+
+.testi-stars {
+  margin-bottom: 1.5rem;
+}
+
+.star {
+  color: $or;
+  font-size: 0.85rem;
+  margin-right: 2px;
+}
+
+.testi-author {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.testi-avatar {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: rgba(196, 146, 42, 0.3);
+  border: 1px solid rgba(196, 146, 42, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: $font-accent;
+  font-size: 0.8rem;
+  color: $or;
+  flex-shrink: 0;
+}
+
+.testi-name {
+  font-family: $font-accent;
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  color: $or;
+}
+
+.testi-city {
+  font-size: 0.68rem;
+  color: rgba(255, 255, 255, 0.3);
+  margin-top: 0.2rem;
+}
+
+// ── CTA Band
+.cta-band {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  background: $or;
+  padding: 3rem 4rem;
+
+  h3 {
+    font-family: $font-display;
+    font-size: clamp(1.5rem, 2.5vw, 2rem);
+    font-weight: 300;
+    color: #fff;
+    margin-bottom: 0.4rem;
+  }
+
+  p {
+    font-size: 0.88rem;
+    color: rgba(255, 255, 255, 0.75);
+  }
+}
+
+.btn-wa {
+  font-family: $font-accent;
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  padding: 1rem 2rem;
+  background: #fff;
+  color: $or;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  white-space: nowrap;
+  flex-shrink: 0;
+  transition: background 0.2s, color 0.2s;
+
+  &:hover {
+    background: $anthracite;
+    color: $or;
+  }
+}
+
+@media (max-width: $mobile) {
+  .testimonials { padding: $section-padding-mobile; }
+  .testi-grid { grid-template-columns: 1fr; }
+  .cta-band {
+    flex-direction: column;
+    text-align: center;
+    padding: 2rem;
+  }
+}

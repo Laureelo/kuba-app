@@ -1,0 +1,122 @@
+@use '../../../../styles/variables' as *;
+
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.2rem 4rem;
+  background: rgba(20, 17, 13, 0.92);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(196, 146, 42, 0.2);
+  transition: padding 0.3s;
+
+  &.scrolled {
+    padding: 0.8rem 4rem;
+  }
+}
+
+.logo {
+  font-family: $font-accent;
+  font-size: 1.3rem;
+  letter-spacing: 0.25em;
+  color: $or;
+  text-decoration: none;
+
+  span { color: #fff; }
+}
+
+.nav-links {
+  display: flex;
+  gap: 2.5rem;
+  list-style: none;
+
+  a {
+    font-family: $font-body;
+    font-size: 0.8rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.75);
+    text-decoration: none;
+    transition: color 0.2s;
+
+    &:hover, &.active { color: $or; }
+  }
+}
+
+.nav-cta {
+  font-family: $font-accent;
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  padding: 0.6rem 1.4rem;
+  background: $or;
+  color: #fff;
+  text-decoration: none;
+  transition: background 0.2s;
+
+  &:hover { background: $or-light; }
+}
+
+.burger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.4rem;
+
+  span {
+    display: block;
+    width: 24px; height: 2px;
+    background: #fff;
+    transition: all 0.3s;
+  }
+
+  &.open span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+  &.open span:nth-child(2) { opacity: 0; }
+  &.open span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+}
+
+.mobile-menu {
+  display: none;
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: $nuit;
+  z-index: 99;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2.5rem;
+
+  &.open { display: flex; }
+
+  a {
+    font-family: $font-accent;
+    font-size: 1.2rem;
+    letter-spacing: 0.2em;
+    color: rgba(255,255,255,0.75);
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: color 0.2s;
+
+    &:hover { color: $or; }
+  }
+
+  .mobile-cta {
+    margin-top: 1rem;
+    padding: 0.8rem 2rem;
+    background: $or;
+    color: #fff;
+    border-radius: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  nav { padding: 1rem 1.5rem; }
+  nav.scrolled { padding: 0.8rem 1.5rem; }
+  .nav-links, .nav-cta { display: none; }
+  .burger { display: flex; }
+}

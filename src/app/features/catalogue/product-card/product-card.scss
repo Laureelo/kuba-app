@@ -1,0 +1,140 @@
+@use '../../../../styles/variables' as *;
+
+.card {
+  background: #fff;
+  overflow: hidden;
+  transition: transform 0.3s, box-shadow 0.3s;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1);
+  }
+}
+
+.card-img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1;
+  background: linear-gradient(135deg, #2a2018, #1a1510);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  text-decoration: none;
+  cursor: pointer;
+
+  &:hover .card-overlay { opacity: 1; }
+  &:hover .card-icon { opacity: 0.15; }
+}
+
+.card-icon {
+  width: 52px;
+  height: 52px;
+  color: rgba(196, 146, 42, 0.35);
+  transition: opacity 0.3s;
+
+  svg { width: 100%; height: 100%; }
+}
+
+.card-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(20, 17, 13, 0.65);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: $font-accent;
+  font-size: 0.68rem;
+  letter-spacing: 0.15em;
+  color: $or;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.tag {
+  position: absolute;
+  top: 1rem; left: 1rem;
+  font-family: $font-accent;
+  font-size: 0.55rem;
+  letter-spacing: 0.2em;
+  background: $or;
+  color: #fff;
+  padding: 0.3rem 0.7rem;
+  z-index: 2;
+
+  &.new { background: $terre; }
+}
+
+.card-info {
+  padding: 1.2rem;
+  background: $nuit;
+}
+
+.card-name {
+  display: block;
+  font-family: $font-display;
+  font-size: 1.1rem;
+  color: #fff;
+  text-decoration: none;
+  margin-bottom: 0.3rem;
+  transition: color 0.2s;
+
+  &:hover { color: $or; }
+}
+
+.card-material {
+  font-size: 0.7rem;
+  color: rgba(255, 255, 255, 0.35);
+  letter-spacing: 0.05em;
+  margin-bottom: 0.8rem;
+}
+
+.card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.card-price {
+  font-family: $font-accent;
+  font-size: 0.82rem;
+  color: $or;
+  letter-spacing: 0.1em;
+}
+
+.card-wa {
+  width: 32px; height: 32px;
+  background: rgba(196, 146, 42, 0.15);
+  border: 1px solid rgba(196, 146, 42, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: $or;
+  text-decoration: none;
+  transition: background 0.2s, color 0.2s;
+
+  &:hover {
+    background: $or;
+    color: #fff;
+  }
+}
+.card.out-of-stock {
+  .card-img { filter: grayscale(60%); }
+  .card-price { color: rgba(196, 146, 42, 0.4); }
+}
+
+.tag.rupture {
+  background: #c0392b;
+}
+
+.card-wa.disabled {
+  width: 32px; height: 32px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255, 255, 255, 0.2);
+  cursor: not-allowed;
+}

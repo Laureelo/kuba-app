@@ -1,0 +1,256 @@
+@use '../../../styles/variables' as *;
+
+.lookbook-page {
+  padding-top: 80px;
+  min-height: 100vh;
+  background: $creme;
+}
+
+.lookbook-hero {
+  background: $nuit;
+  padding: 5rem;
+  text-align: center;
+}
+
+.eyebrow {
+  font-family: $font-accent;
+  font-size: 0.65rem;
+  letter-spacing: 0.3em;
+  color: $or;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.page-title {
+  font-family: $font-display;
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 300;
+  color: #fff;
+  margin-bottom: 1rem;
+
+  em { font-style: italic; color: $or; }
+}
+
+.page-sub {
+  font-size: 0.92rem;
+  color: rgba(255, 255, 255, 0.5);
+  max-width: 500px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+.lookbook-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 0;
+  background: $anthracite;
+  border-bottom: 1px solid rgba(196, 146, 42, 0.15);
+}
+
+.tab-btn {
+  font-family: $font-accent;
+  font-size: 0.68rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  padding: 1.2rem 3rem;
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid transparent;
+  color: rgba(255, 255, 255, 0.4);
+  cursor: pointer;
+  transition: all 0.2s;
+
+  &:hover { color: rgba(255, 255, 255, 0.8); }
+
+  &.active {
+    color: $or;
+    border-bottom-color: $or;
+  }
+}
+
+.lookbook-content {
+  padding: 5rem;
+}
+
+.lookbook-featured {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+  margin-bottom: 5rem;
+  padding-bottom: 5rem;
+  border-bottom: 1px solid rgba(196, 146, 42, 0.15);
+}
+
+.featured-img {
+  aspect-ratio: 4/3;
+  background: linear-gradient(135deg, #2a2018, #1a1510);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+
+  svg {
+    width: 100px;
+    height: 100px;
+    color: rgba(196, 146, 42, 0.2);
+  }
+}
+
+.featured-label {
+  position: absolute;
+  bottom: 1.5rem; left: 1.5rem;
+  font-family: $font-accent;
+  font-size: 0.6rem;
+  letter-spacing: 0.2em;
+  color: rgba(196, 146, 42, 0.6);
+  text-transform: uppercase;
+}
+
+.featured-title {
+  font-family: $font-display;
+  font-size: clamp(2rem, 3vw, 3rem);
+  font-weight: 300;
+  color: $anthracite;
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+
+  em { font-style: italic; color: $terre; }
+}
+
+.featured-desc {
+  font-size: 0.92rem;
+  line-height: 1.8;
+  color: #5a5040;
+}
+
+.lookbook-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.lookbook-card {
+  cursor: pointer;
+
+  &:hover .lookbook-overlay { opacity: 1; }
+}
+
+.lookbook-img {
+  aspect-ratio: 3/4;
+  background: linear-gradient(135deg, #2a2018, #1a1510);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 1rem;
+
+  svg {
+    width: 64px;
+    height: 64px;
+    color: rgba(196, 146, 42, 0.25);
+    transition: opacity 0.3s;
+  }
+}
+
+.lookbook-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(20, 17, 13, 0.75);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.overlay-detail {
+  font-family: $font-accent;
+  font-size: 0.68rem;
+  letter-spacing: 0.15em;
+  color: #fff;
+  text-decoration: none;
+  border: 1px solid rgba(255,255,255,0.4);
+  padding: 0.6rem 1.5rem;
+  transition: border-color 0.2s, color 0.2s;
+
+  &:hover { border-color: $or; color: $or; }
+}
+
+.overlay-wa {
+  font-family: $font-accent;
+  font-size: 0.68rem;
+  letter-spacing: 0.15em;
+  color: #fff;
+  text-decoration: none;
+  background: $or;
+  padding: 0.6rem 1.5rem;
+  transition: background 0.2s;
+
+  &:hover { background: $or-light; }
+}
+
+.lookbook-name {
+  font-family: $font-display;
+  font-size: 1.1rem;
+  color: $anthracite;
+  margin-bottom: 0.3rem;
+}
+
+.lookbook-price {
+  font-family: $font-accent;
+  font-size: 0.8rem;
+  color: $or;
+  letter-spacing: 0.1em;
+}
+
+.empty {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 5rem;
+  color: #8a7a60;
+  font-size: 0.9rem;
+}
+.out-of-stock .lookbook-img,
+.out-of-stock .card-img { filter: grayscale(60%); }
+
+.stock-badge {
+  position: absolute;
+  top: 1rem; left: 1rem;
+  font-family: $font-accent;
+  font-size: 0.55rem;
+  letter-spacing: 0.2em;
+  color: #fff;
+  padding: 0.3rem 0.8rem;
+  z-index: 2;
+
+  &.rupture { background: #c0392b; }
+  &.new     { background: $terre;  }
+  &.best    { background: $or;     }
+}
+
+.price-disabled {
+  color: rgba(196, 146, 42, 0.35) !important;
+  text-decoration: line-through;
+}
+
+@media (max-width: $mobile) {
+  .lookbook-hero { padding: 4rem 2rem; }
+  .lookbook-content { padding: 2rem; }
+  .lookbook-featured { grid-template-columns: 1fr; gap: 2rem; }
+  .lookbook-grid { grid-template-columns: 1fr; }
+  .tab-btn { padding: 1rem 1.5rem; font-size: 0.6rem; }
+}
+
+.overlay-indispo {
+  font-family: $font-accent;
+  font-size: 0.65rem;
+  letter-spacing: 0.15em;
+  color: rgba(255, 255, 255, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  padding: 0.6rem 1.5rem;
+  cursor: not-allowed;
+}

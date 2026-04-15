@@ -1,0 +1,24 @@
+<div class="catalogue-page">
+
+  <div class="catalogue-hero">
+    <div class="eyebrow">Nos bijoux</div>
+    <h1 class="page-title">Le Catalogue <em>Kuba</em></h1>
+    <p class="page-sub">Découvrez toute notre collection — acier inoxydable, pierres naturelles, designs exclusifs.</p>
+  </div>
+
+  <div class="catalogue-filters">
+    @for (f of filters; track f.value) {
+      <button
+        class="filter-btn"
+        [class.active]="activeFilter === f.value"
+        (click)="setFilter(f.value)">
+        {{ f.label }}
+      </button>
+    }
+  </div>
+
+  <div class="catalogue-content">
+    <app-product-grid [products]="filteredProducts" />
+  </div>
+
+</div>

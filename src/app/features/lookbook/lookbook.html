@@ -1,0 +1,101 @@
+<div class="lookbook-page">
+
+  <div class="lookbook-hero">
+    <div class="eyebrow">Inspiration</div>
+    <h1 class="page-title">Le Lookbook <em>Kuba</em></h1>
+    <p class="page-sub">Laissez-vous inspirer par nos univers — et trouvez la pièce qui vous ressemble.</p>
+  </div>
+
+  <div class="lookbook-tabs">
+    @for (tab of tabs; track tab.value) {
+      <button
+        class="tab-btn"
+        [class.active]="activeTab === tab.value"
+        (click)="activeTab = tab.value">
+        {{ tab.label }}
+      </button>
+    }
+  </div>
+
+  <div class="lookbook-content">
+
+    <div class="lookbook-featured">
+      <div class="featured-img">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="0.4">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M6 3h12l4 6-10 12L2 9l4-6z"/>
+          <path stroke-linecap="round" stroke-linejoin="round" d="M2 9h20M6 3l4 6m4 0 4-6"/>
+        </svg>
+        <div class="featured-label">
+          @if (activeTab === 'femme') { Collection Femme 2025 }
+          @else if (activeTab === 'homme') { Collection Homme 2025 }
+          @else { Sets & Cadeaux 2025 }
+        </div>
+      </div>
+      <div class="featured-text">
+        <div class="eyebrow">
+          @if (activeTab === 'femme') { Pour elle }
+          @else if (activeTab === 'homme') { Pour lui }
+          @else { À offrir }
+        </div>
+        <h2 class="featured-title">
+          @if (activeTab === 'femme') { Élégance & <em>féminité</em> }
+          @else if (activeTab === 'homme') { Style & <em>caractère</em> }
+          @else { L'art du <em>cadeau</em> parfait }
+        </h2>
+        <p class="featured-desc">
+          @if (activeTab === 'femme') {
+            Des pièces délicates et raffinées, pensées pour la femme moderne qui veut affirmer son style au quotidien.
+          } @else if (activeTab === 'homme') {
+            Des bijoux sobres et élégants pour l'homme qui sait ce qu'il veut — durables, discrets, distinctifs.
+          } @else {
+            Des coffrets soigneusement composés pour offrir ou se faire plaisir. L'idée cadeau parfaite à tout prix.
+          }
+        </p>
+      </div>
+    </div>
+
+    <div class="lookbook-grid">
+      @for (product of filteredProducts; track product.id) {
+        <div class="lookbook-card" [class.out-of-stock]="!product.inStock">
+          <div class="lookbook-img">
+
+            @if (!product.inStock) {
+              <div class="stock-badge rupture">Rupture de stock</div>
+            } @else if (product.isNew) {
+              <div class="stock-badge new">Nouveau</div>
+            } @else if (product.isBestseller) {
+              <div class="stock-badge best">Bestseller</div>
+            }
+
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="0.8">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M6 3h12l4 6-10 12L2 9l4-6z"/>
+              <path stroke-linecap="round" stroke-linejoin="round" d="M2 9h20M6 3l4 6m4 0 4-6"/>
+            </svg>
+
+            <div class="lookbook-overlay">
+              <a [routerLink]="['/catalogue', product.slug]" class="overlay-detail">Voir le détail</a>
+              @if (product.inStock) {
+                <a [href]="getWaLink(product)" target="_blank" class="overlay-wa">Commander →</a>
+              } @else {
+                <span class="overlay-indispo">Indisponible</span>
+              }
+            </div>
+
+          </div>
+          <div class="lookbook-info">
+            <div class="lookbook-name">{{ product.name }}</div>
+            <div class="lookbook-price" [class.price-disabled]="!product.inStock">
+              {{ product.price | cfaCurrency }}
+            </div>
+          </div>
+        </div>
+      }
+
+      @if (filteredProducts.length === 0) {
+        <div class="empty">Aucun produit dans cette collection pour le moment.</div>
+      }
+    </div>
+
+  </div>
+
+</div>

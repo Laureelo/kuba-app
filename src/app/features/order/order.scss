@@ -1,0 +1,221 @@
+@use '../../../styles/variables' as *;
+
+.order-page {
+  padding-top: 80px;
+  min-height: 100vh;
+  background: $creme;
+}
+
+.order-hero {
+  background: $nuit;
+  padding: 5rem;
+  text-align: center;
+}
+
+.eyebrow {
+  font-family: $font-accent;
+  font-size: 0.65rem;
+  letter-spacing: 0.3em;
+  color: $or;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.page-title {
+  font-family: $font-display;
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 300;
+  color: #fff;
+  margin-bottom: 1rem;
+
+  em { font-style: italic; color: $or; }
+}
+
+.page-sub {
+  font-size: 0.92rem;
+  color: rgba(255, 255, 255, 0.5);
+  max-width: 400px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+.order-steps {
+  padding: 6rem 5rem;
+  background: $creme;
+}
+
+.steps-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.section-title {
+  font-family: $font-display;
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
+  font-weight: 300;
+  color: $anthracite;
+  margin-top: 0.5rem;
+
+  em { font-style: italic; color: $terre; }
+}
+
+.steps-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  margin-bottom: 4rem;
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 2.5rem;
+    left: 12%;
+    right: 12%;
+    height: 1px;
+    background: linear-gradient(to right, $or, rgba(196, 146, 42, 0.2));
+    z-index: 0;
+  }
+}
+
+.step-card {
+  text-align: center;
+  position: relative;
+  z-index: 1;
+
+  h3 {
+    font-family: $font-display;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: $anthracite;
+    margin-bottom: 0.6rem;
+  }
+
+  p {
+    font-size: 0.82rem;
+    line-height: 1.7;
+    color: #6a5c48;
+  }
+}
+
+.step-num {
+  font-family: $font-accent;
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  color: rgba(196, 146, 42, 0.4);
+  margin-bottom: 1rem;
+}
+
+.step-icon {
+  width: 56px;
+  height: 56px;
+  background: $lin;
+  border: 2px solid $or;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.2rem;
+  color: $or;
+
+  svg { width: 26px; height: 26px; }
+}
+
+.steps-cta {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.btn-wa {
+  font-family: $font-accent;
+  font-size: 0.78rem;
+  letter-spacing: 0.12em;
+  padding: 1.1rem 2.5rem;
+  background: #25D366;
+  color: #fff;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  transition: background 0.2s;
+
+  &:hover { background: #1da851; }
+}
+
+.btn-outline {
+  font-family: $font-accent;
+  font-size: 0.78rem;
+  letter-spacing: 0.12em;
+  padding: 1.1rem 2.5rem;
+  background: transparent;
+  border: 1px solid rgba(196, 146, 42, 0.4);
+  color: $or;
+  text-decoration: none;
+  transition: all 0.2s;
+
+  &:hover {
+    background: $or;
+    color: #fff;
+    border-color: $or;
+  }
+}
+
+.order-faq {
+  padding: 6rem 5rem;
+  background: $anthracite;
+  text-align: center;
+
+  .section-title {
+    color: #fff;
+    margin-bottom: 3rem;
+  }
+}
+
+.faq-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  text-align: left;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.faq-card {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(196, 146, 42, 0.15);
+  padding: 2rem;
+  transition: border-color 0.25s;
+
+  &:hover { border-color: rgba(196, 146, 42, 0.4); }
+
+  h3 {
+    font-family: $font-display;
+    font-size: 1rem;
+    font-weight: 600;
+    color: $or;
+    margin-bottom: 0.8rem;
+  }
+
+  p {
+    font-size: 0.82rem;
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.5);
+  }
+}
+
+@media (max-width: $tablet) {
+  .steps-grid {
+    grid-template-columns: repeat(2, 1fr);
+    &::before { display: none; }
+  }
+}
+
+@media (max-width: $mobile) {
+  .order-hero { padding: 4rem 2rem; }
+  .order-steps { padding: 3rem 2rem; }
+  .steps-grid { grid-template-columns: 1fr; }
+  .order-faq { padding: 3rem 2rem; }
+  .faq-grid { grid-template-columns: 1fr; }
+}

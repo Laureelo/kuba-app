@@ -1,0 +1,25 @@
+<section class="why">
+
+  <div class="why-header">
+    <div class="why-left">
+      <div class="eyebrow">Pourquoi nous ?</div>
+      <h2 class="section-title">La promesse <em>Kuba</em></h2>
+      <p class="section-desc">
+        Chez Kuba Accessoires, chaque détail compte.
+        Voici ce qui nous distingue.
+      </p>
+    </div>
+    <div class="why-line"></div>
+  </div>
+
+  <div class="why-grid">
+    @for (reason of reasons; track reason.title) {
+      <div class="why-card">
+        <div class="why-icon" [innerHTML]="reason.svg"></div>
+        <h3>{{ reason.title }}</h3>
+        <p>{{ reason.description }}</p>
+      </div>
+    }
+  </div>
+
+</section>

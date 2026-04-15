@@ -1,0 +1,22 @@
+<section class="lookbook">
+
+  <div class="section-header">
+    <div class="eyebrow">Inspiration</div>
+    <h2 class="section-title">Le Lookbook <em>Kuba</em></h2>
+  </div>
+
+  <div class="lookbook-grid">
+    @for (col of collections; track col.filter) {
+      <a [routerLink]="['/lookbook']" [queryParams]="{ cat: col.filter }" class="lookbook-item">
+        <div class="lookbook-icon" [innerHTML]="col.svg"></div>
+        <div class="lookbook-label">{{ col.label }}</div>
+        <div class="lookbook-hover">Voir la collection →</div>
+      </a>
+    }
+  </div>
+
+  <div class="lookbook-cta">
+    <a routerLink="/lookbook" class="btn-primary">Explorer le Lookbook complet</a>
+  </div>
+
+</section>

@@ -1,0 +1,243 @@
+@use '../../../styles/variables' as *;
+
+.detail-page {
+  padding-top: 80px;
+  min-height: 100vh;
+  background: $creme;
+}
+
+.detail-hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: calc(100vh - 80px);
+}
+
+.detail-img {
+  background: linear-gradient(135deg, #2a2018, #1a1510);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  min-height: 500px;
+}
+
+.detail-icon {
+  width: 140px;
+  height: 140px;
+  color: rgba(196, 146, 42, 0.25);
+
+  svg { width: 100%; height: 100%; }
+}
+
+.detail-tag {
+  position: absolute;
+  top: 2rem; left: 2rem;
+  font-family: $font-accent;
+  font-size: 0.6rem;
+  letter-spacing: 0.2em;
+  background: $or;
+  color: #fff;
+  padding: 0.4rem 1rem;
+
+  &.new { background: $terre; }
+}
+
+.detail-info {
+  padding: 4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: $nuit;
+}
+
+.back-link {
+  font-size: 0.78rem;
+  color: rgba(255, 255, 255, 0.4);
+  text-decoration: none;
+  letter-spacing: 0.05em;
+  margin-bottom: 2rem;
+  transition: color 0.2s;
+  display: inline-block;
+
+  &:hover { color: $or; }
+}
+
+.eyebrow {
+  font-family: $font-accent;
+  font-size: 0.62rem;
+  letter-spacing: 0.3em;
+  color: $or;
+  text-transform: uppercase;
+  margin-bottom: 0.8rem;
+}
+
+.product-name {
+  font-family: $font-display;
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  font-weight: 300;
+  color: #fff;
+  margin-bottom: 0.5rem;
+  line-height: 1.1;
+}
+
+.product-material {
+  font-size: 0.82rem;
+  color: rgba(255, 255, 255, 0.4);
+  letter-spacing: 0.08em;
+  margin-bottom: 1.5rem;
+}
+
+.product-price {
+  font-family: $font-accent;
+  font-size: 1.4rem;
+  color: $or;
+  letter-spacing: 0.1em;
+  margin-bottom: 1.5rem;
+}
+
+.product-desc {
+  font-size: 0.92rem;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.55);
+  margin-bottom: 2.5rem;
+  max-width: 420px;
+}
+
+.detail-actions {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 3rem;
+}
+
+.btn-wa {
+  font-family: $font-accent;
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  padding: 1rem 2rem;
+  background: $or;
+  color: #fff;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  transition: background 0.2s;
+
+  &:hover { background: $or-light; }
+}
+
+.btn-ghost {
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.5);
+  text-decoration: none;
+  letter-spacing: 0.05em;
+  transition: color 0.2s;
+
+  &:hover { color: $or; }
+}
+
+.detail-features {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.feature {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.4);
+
+  svg { color: $or; flex-shrink: 0; }
+}
+
+.related {
+  padding: 5rem;
+  background: $creme;
+  text-align: center;
+}
+
+.related-title {
+  font-family: $font-display;
+  font-size: 2rem;
+  font-weight: 300;
+  color: $anthracite;
+  margin-bottom: 3rem;
+}
+
+.related-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.related-card {
+  text-decoration: none;
+  background: #fff;
+  overflow: hidden;
+  transition: transform 0.3s;
+
+  &:hover { transform: translateY(-4px); }
+}
+
+.related-img {
+  aspect-ratio: 1;
+  background: linear-gradient(135deg, #2a2018, #1a1510);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(196, 146, 42, 0.3);
+}
+
+.related-info {
+  padding: 1rem;
+  background: $nuit;
+}
+
+.related-name {
+  font-family: $font-display;
+  font-size: 1rem;
+  color: #fff;
+  margin-bottom: 0.3rem;
+}
+
+.related-price {
+  font-family: $font-accent;
+  font-size: 0.78rem;
+  color: $or;
+}
+
+.not-found {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 60vh;
+  gap: 2rem;
+
+  h2 {
+    font-family: $font-display;
+    font-size: 2rem;
+    color: $anthracite;
+  }
+}
+.btn-rupture {
+  font-family: $font-accent;
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  padding: 1rem 2rem;
+  background: rgba(192, 57, 43, 0.15);
+  border: 1px solid #c0392b;
+  color: #c0392b;
+  cursor: not-allowed;
+}
+
+@media (max-width: $mobile) {
+  .detail-hero { grid-template-columns: 1fr; }
+  .detail-img { min-height: 300px; }
+  .detail-info { padding: 2rem; }
+  .related { padding: 3rem 2rem; }
+  .related-grid { grid-template-columns: 1fr; }
+}

@@ -1,0 +1,114 @@
+@use '../../../../styles/variables' as *;
+
+.lookbook {
+  padding: $section-padding;
+  background: $lin;
+  text-align: center;
+}
+
+.section-header {
+  margin-bottom: 3rem;
+}
+
+.eyebrow {
+  font-family: $font-accent;
+  font-size: 0.65rem;
+  letter-spacing: 0.3em;
+  color: $or;
+  text-transform: uppercase;
+  margin-bottom: 0.8rem;
+}
+
+.section-title {
+  font-family: $font-display;
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
+  font-weight: 300;
+  color: $anthracite;
+
+  em { font-style: italic; color: $terre; }
+}
+
+.lookbook-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 0.8rem;
+  height: 380px;
+  margin-bottom: 2.5rem;
+}
+
+.lookbook-item {
+  background: linear-gradient(135deg, #2a2018, #1a1510);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  text-decoration: none;
+
+  &:hover .lookbook-hover { opacity: 1; }
+  &:hover .lookbook-icon { opacity: 0.15; }
+}
+
+.lookbook-icon {
+  width: 64px;
+  height: 64px;
+  color: rgba(196, 146, 42, 0.5);
+  transition: opacity 0.3s, color 0.3s;
+
+  svg {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.lookbook-label {
+  position: absolute;
+  bottom: 1rem; left: 1rem;
+  font-family: $font-body;
+  font-size: 0.72rem;
+  color: rgba(255, 255, 255, 0.7);
+  letter-spacing: 0.1em;
+}
+
+.lookbook-hover {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: $font-accent;
+  font-size: 0.7rem;
+  letter-spacing: 0.15em;
+  color: $or;
+  opacity: 0;
+  transition: opacity 0.3s;
+  background: rgba(20, 17, 13, 0.6);
+}
+
+.lookbook-cta {
+  display: flex;
+  justify-content: center;
+}
+
+.btn-primary {
+  font-family: $font-accent;
+  font-size: 0.72rem;
+  letter-spacing: 0.15em;
+  padding: 1rem 2.5rem;
+  background: $or;
+  color: #fff;
+  text-decoration: none;
+  transition: background 0.2s;
+
+  &:hover { background: $or-light; }
+}
+
+@media (max-width: $mobile) {
+  .lookbook { padding: $section-padding-mobile; }
+  .lookbook-grid {
+    grid-template-columns: 1fr;
+    height: auto;
+  }
+  .lookbook-item { height: 180px; }
+}

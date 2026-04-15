@@ -1,0 +1,24 @@
+<nav [class.scrolled]="isScrolled">
+  <a routerLink="/" class="logo">KUBA<span> ACCESSOIRES</span></a>
+
+  <ul class="nav-links">
+    <li><a routerLink="/lookbook" routerLinkActive="active">Lookbook</a></li>
+    <li><a routerLink="/catalogue" routerLinkActive="active">Catalogue</a></li>
+    <li><a routerLink="/notre-histoire" routerLinkActive="active">Notre histoire</a></li>
+    <li><a routerLink="/commander" routerLinkActive="active">Contact</a></li>
+  </ul>
+
+  <a [href]="waLink" target="_blank" class="nav-cta">Commander →</a>
+
+  <button class="burger" (click)="toggleMenu()" [class.open]="menuOpen">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="mobile-menu" [class.open]="menuOpen">
+  <a routerLink="/lookbook" (click)="toggleMenu()">Lookbook</a>
+  <a routerLink="/catalogue" (click)="toggleMenu()">Catalogue</a>
+  <a routerLink="/notre-histoire" (click)="toggleMenu()">Notre histoire</a>
+  <a routerLink="/commander" (click)="toggleMenu()">Contact</a>
+  <a [href]="waLink" target="_blank" class="mobile-cta">Commander →</a>
+</div>

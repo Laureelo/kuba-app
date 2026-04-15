@@ -1,0 +1,124 @@
+@use '../../../../styles/variables' as *;
+
+.intro {
+  padding: $section-padding;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+  align-items: center;
+  background: $creme;
+}
+
+.eyebrow {
+  font-family: $font-accent;
+  font-size: 0.65rem;
+  letter-spacing: 0.3em;
+  color: $or;
+  text-transform: uppercase;
+  margin-bottom: 1.2rem;
+}
+
+.section-title {
+  font-family: $font-display;
+  font-size: clamp(2rem, 3.5vw, 3rem);
+  font-weight: 300;
+  line-height: 1.2;
+  color: $anthracite;
+  margin-bottom: 1.5rem;
+
+  em { font-style: italic; color: $terre; }
+}
+
+.intro-body {
+  font-size: 0.92rem;
+  line-height: 1.8;
+  color: #5a5040;
+  margin-bottom: 1rem;
+}
+
+.intro-stats {
+  display: flex;
+  gap: 2rem;
+  margin-top: 2.5rem;
+}
+
+.stat {
+  border-left: 2px solid $or;
+  padding-left: 1rem;
+}
+
+.stat-num {
+  font-family: $font-display;
+  font-size: 2rem;
+  font-weight: 600;
+  color: $anthracite;
+  line-height: 1;
+}
+
+.stat-label {
+  font-size: 0.72rem;
+  color: #8a7a60;
+  letter-spacing: 0.08em;
+  margin-top: 0.2rem;
+}
+
+.intro-right {
+  position: relative;
+  height: 420px;
+}
+
+.intro-img-main {
+  width: 78%;
+  height: 100%;
+  background: linear-gradient(160deg, #2d2010, #1a1208);
+  position: absolute;
+  right: 0; top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  svg {
+    width: 120px;
+    height: 120px;
+    color: rgba(196, 146, 42, 0.2);
+  }
+}
+
+.intro-img-float {
+  width: 45%;
+  height: 55%;
+  background: linear-gradient(135deg, $lin, $creme);
+  border: 2px solid $or;
+  position: absolute;
+  left: 0; bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+
+  svg {
+    width: 60px;
+    height: 60px;
+    color: rgba(196, 146, 42, 0.4);
+  }
+}
+
+.float-label {
+  position: absolute;
+  bottom: -1.8rem;
+  left: 0;
+  font-family: $font-accent;
+  font-size: 0.6rem;
+  letter-spacing: 0.15em;
+  color: $or;
+  white-space: nowrap;
+}
+
+@media (max-width: $mobile) {
+  .intro {
+    grid-template-columns: 1fr;
+    padding: $section-padding-mobile;
+  }
+  .intro-right { display: none; }
+  .intro-stats { flex-wrap: wrap; gap: 1.5rem; }
+}

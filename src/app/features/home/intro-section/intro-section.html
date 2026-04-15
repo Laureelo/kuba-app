@@ -1,0 +1,41 @@
+<section class="intro">
+
+  <div class="intro-left">
+    <div class="eyebrow">La maison Kuba</div>
+    <h2 class="section-title">L'élégance, <em>accessible</em> à toutes et tous</h2>
+    <p class="intro-body">
+      Né à Ouagadougou, Kuba Accessoires propose des bijoux d'une qualité
+      irréprochable à des prix pensés pour vous. Chaque pièce est sélectionnée
+      pour sa durabilité, son style et sa capacité à traverser les tendances.
+    </p>
+    <p class="intro-body">
+      De la femme citadine qui cherche sa pièce signature à l'homme qui veut
+      affirmer son style — nos bijoux parlent pour vous.
+    </p>
+    <div class="intro-stats">
+      @for (stat of stats; track stat.num) {
+        <div class="stat">
+          <div class="stat-num">{{ stat.num }}</div>
+          <div class="stat-label">{{ stat.label }}</div>
+        </div>
+      }
+    </div>
+  </div>
+
+  <div class="intro-right">
+    <div class="intro-img-main">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="0.5">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M6 3h12l4 6-10 12L2 9l4-6z"/>
+        <path stroke-linecap="round" stroke-linejoin="round" d="M2 9h20M6 3l4 6m4 0 4-6"/>
+      </svg>
+    </div>
+    <div class="intro-img-float">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="0.8">
+        <circle cx="12" cy="12" r="4"/>
+        <path stroke-linecap="round" d="M12 2v2M12 20v2M2 12h2M20 12h2"/>
+      </svg>
+      <div class="float-label">Set Graham — 12 500 CFA</div>
+    </div>
+  </div>
+
+</section>

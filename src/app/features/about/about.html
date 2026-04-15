@@ -1,0 +1,73 @@
+<div class="about-page">
+
+  <div class="about-hero">
+    <div class="eyebrow">Notre histoire</div>
+    <h1 class="page-title">La maison <em>Kuba</em></h1>
+    <p class="page-sub">Née à Ouagadougou, portée par une passion pour le beau et le durable.</p>
+  </div>
+
+  <div class="about-story">
+    <div class="story-img">
+      <div class="img-block main">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="0.5">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M6 3h12l4 6-10 12L2 9l4-6z"/>
+          <path stroke-linecap="round" stroke-linejoin="round" d="M2 9h20M6 3l4 6m4 0 4-6"/>
+        </svg>
+      </div>
+      <div class="img-block float">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1">
+          <circle cx="12" cy="12" r="4"/>
+          <path stroke-linecap="round" d="M12 2v2M12 20v2M2 12h2M20 12h2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/>
+        </svg>
+        <div class="float-tag">Fondée à Ouagadougou</div>
+      </div>
+    </div>
+
+    <div class="story-text">
+      <div class="eyebrow">La fondatrice</div>
+      <h2 class="section-title">Une vision, <em>une passion</em></h2>
+      <p>
+        Kuba Accessoires est née d'une conviction simple : chaque personne mérite
+        de porter des bijoux beaux, durables et à sa portée. Fondée à Ouagadougou,
+        la marque s'est construite autour d'une sélection rigoureuse de pièces
+        en acier inoxydable et pierres naturelles.
+      </p>
+      <p>
+        Ce qui a commencé comme une passion pour le style et l'élégance est
+        devenu une véritable maison de bijoux, reconnue pour la qualité de ses
+        pièces et la chaleur de son service client.
+      </p>
+      <p>
+        Aujourd'hui, Kuba Accessoires habille hommes et femmes à Ouagadougou
+        et au-delà — avec toujours la même promesse : du beau, pour tous.
+      </p>
+      <a routerLink="/catalogue" class="btn-primary">Découvrir la collection</a>
+    </div>
+  </div>
+
+  <div class="about-values">
+    <div class="values-header">
+      <div class="eyebrow">Ce qui nous guide</div>
+      <h2 class="section-title">Nos <em>valeurs</em></h2>
+    </div>
+    <div class="values-grid">
+      @for (val of values; track val.title) {
+        <div class="value-card">
+          <div class="value-icon" [innerHTML]="val.svg"></div>
+          <h3>{{ val.title }}</h3>
+          <p>{{ val.desc }}</p>
+        </div>
+      }
+    </div>
+  </div>
+
+  <div class="about-cta">
+    <h2>Prêt(e) à trouver votre pièce signature ?</h2>
+    <p>Parcourez notre catalogue ou contactez-nous directement sur WhatsApp.</p>
+    <div class="cta-actions">
+      <a routerLink="/catalogue" class="btn-primary">Voir le catalogue</a>
+      <a [href]="waLink" target="_blank" class="btn-wa">Nous contacter</a>
+    </div>
+  </div>
+
+</div>

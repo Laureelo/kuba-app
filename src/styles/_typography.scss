@@ -1,0 +1,31 @@
+@use 'variables' as *;
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&family=Cinzel:wght@400;600&display=swap');
+
+h1, h2, h3 {
+  font-family: $font-display;
+  font-weight: 300;
+}
+
+body {
+  font-family: $font-body;
+}
+
+.eyebrow {
+  font-family: $font-accent;
+  font-size: 0.65rem;
+  letter-spacing: 0.3em;
+  color: $or;
+  text-transform: uppercase;
+}
+
+.display-title {
+  font-family: $font-display;
+  font-weight: 300;
+  line-height: 1.1;
+
+  em {
+    font-style: italic;
+    color: $or;
+  }
+}

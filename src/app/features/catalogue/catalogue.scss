@@ -1,0 +1,84 @@
+@use '../../../styles/variables' as *;
+
+.catalogue-page {
+  padding-top: 80px;
+  min-height: 100vh;
+  background: $creme;
+}
+
+.catalogue-hero {
+  background: $nuit;
+  padding: 5rem;
+  text-align: center;
+}
+
+.eyebrow {
+  font-family: $font-accent;
+  font-size: 0.65rem;
+  letter-spacing: 0.3em;
+  color: $or;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.page-title {
+  font-family: $font-display;
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 300;
+  color: #fff;
+  margin-bottom: 1rem;
+
+  em { font-style: italic; color: $or; }
+}
+
+.page-sub {
+  font-size: 0.92rem;
+  color: rgba(255, 255, 255, 0.5);
+  max-width: 500px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+.catalogue-filters {
+  display: flex;
+  justify-content: center;
+  gap: 0.8rem;
+  padding: 2.5rem 5rem;
+  background: $lin;
+  border-bottom: 1px solid rgba(196, 146, 42, 0.15);
+  flex-wrap: wrap;
+}
+
+.filter-btn {
+  font-family: $font-accent;
+  font-size: 0.68rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  padding: 0.7rem 1.8rem;
+  background: transparent;
+  border: 1px solid rgba(196, 146, 42, 0.3);
+  color: #6a5c48;
+  cursor: pointer;
+  transition: all 0.2s;
+
+  &:hover {
+    border-color: $or;
+    color: $or;
+  }
+
+  &.active {
+    background: $or;
+    border-color: $or;
+    color: #fff;
+  }
+}
+
+.catalogue-content {
+  padding: 4rem 5rem;
+}
+
+@media (max-width: $mobile) {
+  .catalogue-hero { padding: 4rem 2rem; }
+  .catalogue-filters { padding: 2rem; }
+  .catalogue-content { padding: 2rem; }
+}

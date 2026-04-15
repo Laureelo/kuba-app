@@ -1,0 +1,7 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(ls -la /c/Users/DELL/kuba-app/src/app/shared/components/*/)"
+    ]
+  }
+}
